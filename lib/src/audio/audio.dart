@@ -29,7 +29,7 @@ export 'package:audio_service/audio_service.dart';
 export 'package:just_audio/just_audio.dart';
 export 'package:just_audio_media_kit/just_audio_media_kit.dart';
 
-part '../pages/surah_audio_screen.dart';
+part '../screens/surah_audio_screen/surah_audio_screen.dart';
 part 'constants/readers_constants.dart';
 part 'constants/storage_constants.dart';
 part 'controller/audio_ctrl.dart';

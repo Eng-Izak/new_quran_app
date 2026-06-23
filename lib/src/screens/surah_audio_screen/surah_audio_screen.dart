@@ -1,4 +1,4 @@
-part of '../audio/audio.dart';
+part of '../../audio/audio.dart';
 
 class SurahAudioScreen extends StatelessWidget {
   final SurahAudioStyle? style;

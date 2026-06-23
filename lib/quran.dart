@@ -22,7 +22,9 @@ import 'package:html/dom.dart' as dom;
 import 'package:html/parser.dart' as html_parser;
 import 'package:preload_page_view/preload_page_view.dart'
     hide PageScrollPhysics, PageMetrics;
-
+import 'package:quran_library/src/core/widgets/custom_app_bar.dart';
+import 'package:quran_library/src/screens/get_single_ayah/widgets/qpc_ayah_layout_builder.dart';
+import 'package:quran_library/src/screens/get_single_ayah/widgets/traditional_ayah_layout.dart';
 import 'src/audio/audio.dart';
 import 'src/core/platform/io_helpers.dart';
 import 'src/core/utils/app_colors.dart';
@@ -40,10 +42,10 @@ part 'src/core/utils/assets_path.dart';
 part 'src/core/utils/toast_utils.dart';
 part 'src/core/widgets/patched_preload_page_view.dart';
 part 'src/flutter_quran_utils.dart';
-part 'src/pages/get_single_ayah.dart';
-part 'src/pages/quran_library_screen.dart';
-part 'src/pages/quran_pages_screen.dart';
-part 'src/pages/surah_display_screen.dart';
+part 'src/screens/get_single_ayah/get_single_ayah.dart';
+part 'src/screens/quran_library_screen/quran_library_screen.dart';
+part 'src/screens/quran_pages_screen/quran_pages_screen.dart';
+part 'src/screens/surah_display_screen/surah_display_screen.dart';
 part 'src/quran/core/extensions/context_extensions.dart';
 part 'src/quran/core/extensions/convert_arabic_to_english_numbers_extension.dart';
 part 'src/quran/core/extensions/convert_number_extension.dart';
@@ -135,22 +137,3 @@ part 'src/quran/presentation/widgets/top_bottom_widget/top_and_bottom_widget.dar
 part 'src/quran/presentation/widgets/word_info/marked_content_span.dart';
 part 'src/quran/presentation/widgets/word_info/tap_long_press_recognizer.dart';
 part 'src/quran/presentation/widgets/word_info/word_info_bottom_sheet.dart';
-
-/// A comprehensive library for displaying the Holy Quran in Flutter applications.
-///
-/// This library provides a set of widgets, controllers, and data models to facilitate
-/// the integration of Quranic text, tafsir (exegesis), and various display styles
-/// into Flutter projects. It aims to offer a highly customizable and performant
-/// solution for Quranic applications.
-///
-/// The core components of this library include:
-/// - **Data Models**: Representing Ayahs, Surahs, Quran pages, and Tafsir data.
-/// - **Controllers**: Managing the state and logic for Quran display, search, and bookmarking.
-/// - **Widgets**: Reusable UI components for rendering Quranic text, surah headers, and interactive elements.
-/// - **Utilities & Extensions**: Helper functions and Dart extensions for common tasks like number conversion, text normalization, and asset management.
-///
-/// This file (`quran.dart`) serves as the main entry point for the library, parting
-/// all necessary components and defining the `part` directives for modular organization.
-///
-/// To use this library, import `package:quran_library/quran_library.dart` and utilize
-/// the provided classes and functions. Ensure that all required assets (fonts, JSONs, DB) are correctly configured in `pubspec.yaml`.
