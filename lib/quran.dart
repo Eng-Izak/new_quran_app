@@ -25,6 +25,9 @@ import 'package:preload_page_view/preload_page_view.dart'
 import 'package:quran_library/src/core/widgets/custom_app_bar.dart';
 import 'package:quran_library/src/screens/get_single_ayah/widgets/qpc_ayah_layout_builder.dart';
 import 'package:quran_library/src/screens/get_single_ayah/widgets/traditional_ayah_layout.dart';
+import 'package:quran_library/src/screens/quran_library_screen/widgets/control_widget.dart';
+import 'package:quran_library/src/screens/quran_library_screen/widgets/item_builder_widget.dart';
+import 'package:quran_library/src/screens/quran_library_screen/widgets/quran_page_view_layout.dart';
 import 'src/audio/audio.dart';
 import 'src/core/platform/io_helpers.dart';
 import 'src/core/utils/app_colors.dart';

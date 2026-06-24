@@ -350,7 +350,7 @@ class QuranPagesScreen extends StatelessWidget {
                           showAyahBookmarkedIcon: showAyahBookmarkedIcon,
                           onAyahLongPress: onAyahLongPress,
                           bookmarksColor: bookmarksColor,
-                                  customBookmarksColor: customBookmarksColor,
+                          customBookmarksColor: customBookmarksColor,
                           surahNameStyle: surahNameStyle,
                           bannerStyle: bannerStyle,
                           basmalaStyle: basmalaStyle,
@@ -472,7 +472,7 @@ class QuranPagesScreen extends StatelessWidget {
                                           appBar == null &&
                                                   useDefaultAppBar &&
                                                   visible
-                                              ? _QuranTopBar(
+                                              ? QuranTopBar(
                                                   languageCode,
                                                   isDark,
                                                   style: surahStyle ??

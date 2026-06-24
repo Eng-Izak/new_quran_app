@@ -555,7 +555,7 @@ class SurahDisplayScreen extends StatelessWidget {
                 showAyahBookmarkedIcon: showAyahBookmarkedIcon,
                 onAyahLongPress: onAyahLongPress,
                 bookmarksColor: bookmarksColor,
-                                  customBookmarksColor: customBookmarksColor,
+                customBookmarksColor: customBookmarksColor,
                 surahNameStyle: surahNameStyle,
                 bannerStyle: bannerStyle,
                 basmalaStyle: basmalaStyle,
@@ -642,7 +642,7 @@ class _SurahControlWidget extends StatelessWidget {
                   // شريط التطبيق العلوي
                   // Top app bar
                   appBar == null && useDefaultAppBar && visible
-                      ? _QuranTopBar(
+                      ? QuranTopBar(
                           languageCode,
                           isDark,
                           style: surahStyle ?? SurahAudioStyle(),

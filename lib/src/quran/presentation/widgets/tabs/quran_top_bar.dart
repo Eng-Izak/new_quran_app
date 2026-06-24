@@ -1,6 +1,6 @@
 part of '/quran.dart';
 
-class _QuranTopBar extends StatelessWidget {
+class QuranTopBar extends StatelessWidget {
   final String languageCode;
   final bool isDark;
   final SurahAudioStyle? style;
@@ -10,7 +10,7 @@ class _QuranTopBar extends StatelessWidget {
   final bool? isSingleSurah;
   final bool? isPagesView;
 
-  const _QuranTopBar(
+  const QuranTopBar(
     this.languageCode,
     this.isDark, {
     this.style,
