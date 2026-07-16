@@ -133,7 +133,9 @@ class StandardQpcLayout extends StatelessWidget {
         backgroundColor: isSelected
             ? ayahSelectedBackgroundColor ?? Colors.transparent
             : null,
-        fontFamily: fontsName.isNotEmpty ? fontsName : null,
+        fontFamily: fontsName.isNotEmpty
+            ? fontsName
+            : QuranCtrl.instance.getFontPath(pageIndex, isDark: isDark),
       ),
     );
   }

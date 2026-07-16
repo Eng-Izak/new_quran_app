@@ -59,39 +59,40 @@ class QpcAyahLayoutBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final quranCtrl = QuranCtrl.instance;
-    final blocks = quranCtrl.getQpcLayoutBlocksForPageSync(pageNumber);
+    return GetBuilder<QuranCtrl>(
+      builder: (quranCtrl) {
+        final blocks = quranCtrl.getQpcLayoutBlocksForPageSync(pageNumber);
 
-    if (blocks.isEmpty) {
-      return const Center(child: CircularProgressIndicator.adaptive());
-    }
+        if (blocks.isEmpty) {
+          return const Center(child: CircularProgressIndicator.adaptive());
+        }
 
-    // استخراج segments الخاصة بالآية المطلوبة فقط
-    final List<QpcV4WordSegment> ayahSegments = [];
-    for (final block in blocks) {
-      if (block is QpcV4AyahLineBlock) {
-        for (final seg in block.segments) {
-          if (seg.surahNumber == surahNumber && seg.ayahNumber == ayahNumber) {
-            ayahSegments.add(seg);
+        // استخراج segments الخاصة بالآية المطلوبة فقط
+        final List<QpcV4WordSegment> ayahSegments = [];
+        for (final block in blocks) {
+          if (block is QpcV4AyahLineBlock) {
+            for (final seg in block.segments) {
+              if (seg.surahNumber == surahNumber && seg.ayahNumber == ayahNumber) {
+                ayahSegments.add(seg);
+              }
+            }
           }
         }
-      }
-    }
 
-    // fallback للعرض التقليدي إذا لم يتم العثور على segments
-    if (ayahSegments.isEmpty) {
-      return TraditionalAyahLayout(
-        ayah: ayah,
-        pageNumber: pageNumber,
-        fontSize: fontSize,
-        isDark: isDark,
-        isBold: isBold,
-        textColor: textColor,
-        fontsName: fontsName,
-        islocalFont: islocalFont,
-        ayahIconColor: ayahIconColor,
-      );
-    }
+        // fallback للعرض التقليدي إذا لم يتم العثور على segments
+        if (ayahSegments.isEmpty) {
+          return TraditionalAyahLayout(
+            ayah: ayah,
+            pageNumber: pageNumber,
+            fontSize: fontSize,
+            isDark: isDark,
+            isBold: isBold,
+            textColor: textColor,
+            fontsName: fontsName,
+            islocalFont: islocalFont,
+            ayahIconColor: ayahIconColor,
+          );
+        }
 
     // عرض مع تحديد الكلمات
     if (enableWordSelection) {
@@ -140,6 +141,8 @@ class QpcAyahLayoutBuilder extends StatelessWidget {
           );
         },
       ),
+    );
+      },
     );
   }
 }

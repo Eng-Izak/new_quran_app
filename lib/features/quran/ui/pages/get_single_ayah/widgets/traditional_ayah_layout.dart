@@ -35,10 +35,7 @@ class TraditionalAyahLayout extends StatelessWidget {
       maxLines: null,
       text: TextSpan(
         style: TextStyle(
-          fontFamily: islocalFont == true
-              ? fontsName
-              : QuranCtrl.instance
-                  .getFontPath(pageNumber - 1, isDark: isDark ?? false),
+          fontFamily: islocalFont == true ? fontsName : 'hafs',
           package: 'quran_library',
           fontSize: fontSize ?? 22,
           height: 2.0,
