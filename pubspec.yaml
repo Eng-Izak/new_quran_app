@@ -13,13 +13,16 @@ dependencies:
   arabic_justified_text: ^1.0.2
   archive: ^4.0.9
   audio_service: ^0.18.18
+  bloc: ^8.1.4
   connectivity_plus: ^7.1.1
   dio: ^5.9.2
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_scale_kit: ^1.5.2
   flutter_svg: ^2.3.0
   get: ^4.7.3
+  get_it: ^7.7.0
   get_storage: ^2.1.1
   html: ^0.15.6
   just_audio: ^0.10.5
@@ -61,13 +64,7 @@ package_rename_config:
     package_name: com.alheekmah.quranPackage
 
 flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.alheekmah.quranPackage
-        pluginClass: QuranLibraryPlugin
-      # ios:
-      #   pluginClass: QuranLibraryPlugin
+  uses-material-design: true
   assets:
     - assets/
     - assets/fonts/
@@ -75,6 +72,11 @@ flutter:
     - assets/fonts/NotoNaskhArabic-VariableFont_wght.ttf
     - assets/fonts/UthmanicHafs_V20.ttf
     - assets/jsons/
+    - assets/jsons/qpc-hafs-word-by-word.json.gz
+    - assets/jsons/qpc-v4.json.gz
+    - assets/jsons/qpc_v4_ayah_info.json.gz
+    - assets/jsons/quranV4.json.gz
+    - assets/jsons/surahs_name.json.gz
     - assets/svg/
     - assets/images/
     - assets/saadi.json.gz

@@ -4,7 +4,7 @@ import 'dart:typed_data' show Uint8List;
 
 import 'package:archive/archive.dart' show GZipEncoder;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:quran_library/src/service/gzip_json_asset_service.dart';
+import 'package:quran_library/core/services/gzip_json_asset_service.dart';
 
 void main() {
   test('يفك ضغط json.gz (Map) بشكل صحيح', () {

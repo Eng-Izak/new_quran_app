@@ -1,3 +1,20 @@
+// Root project repositories & build-output redirect so Flutter can find the APK
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Redirect build outputs to quran_package_editing/build/ (Flutter's expected location)
+def newBuildDir = rootProject.layout.buildDirectory.dir("../../build").get()
+rootProject.layout.buildDirectory.value(newBuildDir)
+subprojects {
+    def newSubprojectBuildDir = newBuildDir.dir(project.name)
+    project.layout.buildDirectory.value(newSubprojectBuildDir)
+}
+
+// ── Flutter Plugin Library ────────────────────────────────────────────────────
 apply plugin: 'com.android.library'
 
 android {
@@ -14,12 +31,20 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader -> localProperties.load(reader) }
+}
+def flutterSdkPath = localProperties.getProperty('flutter.sdk')
+
 dependencies {
+    compileOnly files("$flutterSdkPath/bin/cache/artifacts/engine/android-x64/flutter.jar")
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.media:media:1.6.0'
