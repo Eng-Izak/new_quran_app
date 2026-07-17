@@ -67,7 +67,7 @@ class BannerStyle {
       bannerImagePath: '',
       bannerImageHeight: 50,
       bannerImageWidth: double.infinity,
-      svgBannerColor: null,
+      svgBannerColor: isDark ? const Color(0xff063d32) : null,
     );
   }
 
@@ -85,7 +85,7 @@ class BannerStyle {
       bannerImagePath: '',
       bannerImageHeight: 50,
       bannerImageWidth: double.infinity,
-      svgBannerColor: null,
+      svgBannerColor: isDark ? const Color(0xff063d32) : null,
     );
   }
 
@@ -100,7 +100,7 @@ class BannerStyle {
       bannerImagePath: '',
       bannerImageHeight: 50,
       bannerImageWidth: double.infinity,
-      svgBannerColor: null,
+      svgBannerColor: isDark ? const Color(0xff063d32) : null,
     );
   }
 }

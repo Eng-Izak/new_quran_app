@@ -588,6 +588,22 @@ class QuranCtrl extends GetxController {
     this.lastPage = lastPage;
     // كتابة فورية — GetStorage يحدّث الذاكرة لحظياً ويدير كتابة القرص تلقائياً بتأجيل 16ms.
     _quranRepository.saveLastPage(lastPage);
+
+    // Manage recent pages list
+    try {
+      final storage = GetStorage();
+      List<dynamic> saved = storage.read<List<dynamic>>('recent_pages') ?? [];
+      List<int> recents = List<int>.from(saved);
+      recents.remove(lastPage);
+      recents.insert(0, lastPage);
+      if (recents.length > 10) {
+        recents = recents.sublist(0, 10);
+      }
+      storage.write('recent_pages', recents);
+    } catch (e) {
+      log('Error saving recent pages: $e', name: 'QuranCtrl');
+    }
+
     log('Saved last page: $lastPage', name: 'QuranCtrl');
   }
 

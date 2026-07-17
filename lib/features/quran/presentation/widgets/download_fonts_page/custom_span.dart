@@ -90,7 +90,7 @@ TextSpan qpcV4SpanSegment({
               fontSize: usePaintColoring ? (fontSize + 5) : (fontSize + 5),
               height: 1.5,
               package: 'quran_library',
-              color: ayahIconColor ?? Theme.of(context).colorScheme.primary,
+              color: ayahIconColor,
             ),
             recognizer: LongPressGestureRecognizer(
                 duration: const Duration(milliseconds: 500))

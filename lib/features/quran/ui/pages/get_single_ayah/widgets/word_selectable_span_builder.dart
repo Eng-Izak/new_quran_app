@@ -69,7 +69,7 @@ class WordSelectableSpanBuilder {
             fontSize: fontSize + 5,
             height: 1.5,
             package: 'quran_library',
-            color: ayahIconColor ?? Theme.of(context).colorScheme.primary,
+            color: ayahIconColor,
           ),
         );
       }

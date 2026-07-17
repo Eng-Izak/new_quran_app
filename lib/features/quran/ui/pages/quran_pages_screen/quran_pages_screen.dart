@@ -22,7 +22,7 @@ class QuranPagesScreen extends StatelessWidget {
     this.customBookmarksColor,
     this.circularProgressWidget,
     this.downloadFontsDialogStyle,
-    this.isDark = false,
+    this.isDark = true,
     this.appLanguageCode,
     this.onAyahLongPress,
     this.onPageChanged,

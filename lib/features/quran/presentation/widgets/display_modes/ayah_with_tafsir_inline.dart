@@ -594,8 +594,7 @@ class _InlineAyahTafsirItem extends StatelessWidget {
                                 fontSize: (fontSize + 5),
                                 height: 1.5,
                                 package: 'quran_library',
-                                color: style.ayahNumberColor ??
-                                    Theme.of(context).colorScheme.primary,
+                                color: style.ayahNumberColor,
                               ),
                             ),
                       const Spacer(),

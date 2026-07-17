@@ -264,7 +264,7 @@ class AyahTafsirInlineStyle {
       ),
       ayahPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       tafsirPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      ayahNumberColor: scheme.primary,
+      ayahNumberColor: null,
       optionsBarBackgroundColor: scheme.primary.withValues(alpha: .1),
       tafsirSelectorBarColor: scheme.primary.withValues(alpha: .1),
       tafsirSelectorTextColor: AppColors.getTextColor(isDark),

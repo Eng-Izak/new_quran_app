@@ -40,6 +40,9 @@ class BookmarksCtrl extends GetxController {
   /// The [bookmarks] map is used to store the bookmarks of the user.
   final Map<int, List<BookmarkModel>> bookmarks = {};
 
+  /// A reactive list of bookmarked page numbers.
+  final RxList<int> bookmarkedPages = <int>[].obs;
+
   /// A list of ayah Ids that have bookmarks.
   ///
   /// This list is created by flattening the [bookmarks] map, which is a map of
@@ -110,6 +113,21 @@ class BookmarksCtrl extends GetxController {
     }
     _quranRepository.saveBookmarks(_flattenBookmarks());
     _rebuildBookmarksCache();
+
+    // Load page bookmarks
+    final savedPages = GetStorage().read<List<dynamic>>('bookmarked_pages_list') ?? [];
+    bookmarkedPages.assignAll(savedPages.cast<int>());
+
+    update(['bookmarks']);
+  }
+
+  void togglePageBookmark(int page) {
+    if (bookmarkedPages.contains(page)) {
+      bookmarkedPages.remove(page);
+    } else {
+      bookmarkedPages.add(page);
+    }
+    GetStorage().write('bookmarked_pages_list', bookmarkedPages.toList());
     update(['bookmarks']);
   }
 

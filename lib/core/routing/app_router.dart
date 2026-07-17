@@ -10,6 +10,7 @@ class AppRouter {
           builder: (context) => Scaffold(
             body: QuranLibraryScreen(
               parentContext: context,
+              isDark: true,
             ),
           ),
         );

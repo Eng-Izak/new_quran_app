@@ -20,7 +20,7 @@ class SurahDisplayScreen extends StatelessWidget {
     this.bookmarksColor,
     this.customBookmarksColor,
     this.circularProgressWidget,
-    this.isDark = false,
+    this.isDark = true,
     this.appLanguageCode,
     this.onAyahLongPress,
     this.onPageChanged,

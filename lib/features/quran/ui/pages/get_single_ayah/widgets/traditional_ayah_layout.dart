@@ -52,7 +52,7 @@ class TraditionalAyahLayout extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'ayahNumber',
               package: 'quran_library',
-              color: ayahIconColor ?? Theme.of(context).colorScheme.primary,
+              color: ayahIconColor,
             ),
           ),
         ],
