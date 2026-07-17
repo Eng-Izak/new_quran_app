@@ -136,6 +136,7 @@ export 'features/quran/ui/pages/get_single_ayah/get_single_ayah.dart';
 export 'features/quran/ui/pages/quran_library_screen/quran_library_screen.dart';
 export 'features/quran/ui/pages/quran_pages_screen/quran_pages_screen.dart';
 export 'features/quran/ui/pages/surah_display_screen/surah_display_screen.dart';
+export 'features/quran/ui/pages/quran_home_screen/quran_home_screen.dart';
 export 'features/quran/flutter_quran_utils.dart';
 
 // Features - Bookmarks

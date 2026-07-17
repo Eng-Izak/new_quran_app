@@ -184,7 +184,21 @@ class QuranTopBar extends StatelessWidget {
                     languageCode: languageCode,
                     isFontsLocal: isFontsLocal,
                     isDark: isDark,
-                  )
+                  ),
+                Obx(() {
+                  final currentPage = QuranCtrl.instance.state.currentPageNumber.value;
+                  final isBookmarked = BookmarksCtrl.instance.bookmarkedPages.contains(currentPage);
+                  return IconButton(
+                    icon: Icon(
+                      isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                      color: defaults.iconColor ?? Theme.of(context).colorScheme.primary,
+                      size: defaults.iconSize ?? 24,
+                    ),
+                    onPressed: () {
+                      BookmarksCtrl.instance.togglePageBookmark(currentPage);
+                    },
+                  );
+                }),
               ],
             )
           ],

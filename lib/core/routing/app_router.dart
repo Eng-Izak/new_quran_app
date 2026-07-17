@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../features/quran/ui/pages/quran_library_screen/quran_library_screen.dart';
+import 'package:quran_library/quran.dart';
 import 'route_names.dart';
 
 class AppRouter {
@@ -7,12 +6,7 @@ class AppRouter {
     switch (settings.name) {
       case RouteNames.initial:
         return MaterialPageRoute(
-          builder: (context) => Scaffold(
-            body: QuranLibraryScreen(
-              parentContext: context,
-              isDark: true,
-            ),
-          ),
+          builder: (context) => const QuranHomeScreen(),
         );
       default:
         return MaterialPageRoute(
